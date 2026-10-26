@@ -1,206 +1,113 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYA.AI - Jasa Pembuatan Website Statis Modern</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MYA.AI – Jasa Pembuatan Website Statis Modern</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f3faf5;--ink:#0d2b1d;--muted:#4f6b5c;--green:#0f7a4a;--lime:#c6f432;--card:#fff;--line:#d3e6da;--on-lime:#0d2b1d;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08150f;--ink:#e8f5ec;--muted:#93b0a0;--green:#3ddc8a;--card:#10241a;--line:#1d3a2a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08150f;--ink:#e8f5ec;--muted:#93b0a0;--green:#3ddc8a;--card:#10241a;--line:#1d3a2a;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.65 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:hidden}
+.wrap{max-width:1060px;margin:0 auto;padding:0 1.5rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.9rem;padding-bottom:.9rem}
+.logo{font-weight:800;font-size:1.3rem;color:var(--ink);text-decoration:none}.logo span{background:var(--lime);color:var(--on-lime);padding:0 .35rem;border-radius:6px;margin-left:.2rem}
+nav ul{display:flex;gap:1.4rem;list-style:none;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+section{padding:4.5rem 0}
+.hero{text-align:center;padding-top:5rem}
+.pill{display:inline-block;background:var(--lime);color:var(--on-lime);font-weight:800;font-size:.8rem;padding:.35rem .9rem;border-radius:99px;margin-bottom:1.2rem}
+h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;max-width:46rem;margin:0 auto}
+h1 u{text-decoration:none;color:var(--green)}
+.lead{color:var(--muted);font-size:1.15rem;max-width:36rem;margin:1.2rem auto 2rem}
+.btn{display:inline-block;padding:.9rem 1.7rem;border-radius:12px;font-weight:800;text-decoration:none;background:var(--lime);color:var(--on-lime);transition:transform .2s;margin:.3rem}
+.btn:hover{transform:translateY(-3px)}
+.btn.o{background:none;color:var(--ink);border:2px solid var(--ink)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;text-align:center;margin-bottom:.6rem}
+.sub{text-align:center;color:var(--muted);margin-bottom:2.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.3rem}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.8rem;position:relative}
+.box h3{font-size:1.2rem;margin-bottom:.4rem}
+.price{font-size:2rem;font-weight:800;color:var(--green);margin:.4rem 0 1rem}
+.price small{font-size:.85rem;color:var(--muted);font-weight:400}
+.box ul{list-style:none;margin-bottom:1.5rem;color:var(--muted);font-size:.95rem}
+.box li{padding:.3rem 0 .3rem 1.5rem;position:relative}
+.box li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.hot{border:2px solid var(--green)}
+.hot::after{content:"Paling laris";position:absolute;top:-.8rem;right:1.2rem;background:var(--lime);color:var(--on-lime);font-size:.75rem;font-weight:800;padding:.2rem .8rem;border-radius:99px}
+.box .btn{display:block;text-align:center;margin:0}
+.steps{counter-reset:s}
+.steps .box::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;background:var(--lime);color:var(--on-lime);border-radius:50%;font-weight:800;margin-bottom:.8rem}
+.extra{margin-top:1.5rem;text-align:center;color:var(--muted);font-size:.95rem}
+.work a{color:var(--green);font-weight:800;text-decoration:none}
+.cta{background:var(--ink);color:var(--bg);border-radius:24px;text-align:center;padding:3rem 1.5rem}
+.cta p{opacity:.8;margin:.6rem 0 1.5rem}
+footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem}
+@media (max-width:700px){nav li:nth-child(-n+3){display:none}section{padding:3rem 0}}
+</style>
 </head>
 <body>
-    
-    <!-- SPLASH SCREEN -->
-    <div class="splash">
-        <div class="splash-content">
-            <img src="MYA.jpeg" alt="MYA.AI Logo" class="splash-logo">
-            <p class="splash-text">MYAAI</p>
-        </div>
-    </div>
+<nav><div class="wrap"><a class="logo" href="#top">MYA<span>AI</span></a>
+<ul><li><a href="#harga">Harga</a></li><li><a href="#alur">Alur</a></li><li><a href="#hasil">Hasil Kerja</a></li><li><a class="btn" style="padding:.5rem 1rem;margin:0" href="#kontak">Konsultasi</a></li></ul></div></nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="MYA.jpeg" alt="MYA.AI Logo" class="logo-image">
-                <span>MYAAI</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<main id="top">
+<section class="wrap hero">
+<span class="pill">✨ Website statis modern</span>
+<h1>Punya acara atau bisnis? Buat <u>website</u>-nya sekarang.</h1>
+<p class="lead">Undangan digital, landing page, dan website bisnis yang cepat, rapi di HP, dan siap dibagikan lewat satu link.</p>
+<a class="btn" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20mau%20konsultasi%20pembuatan%20website.">Konsultasi gratis</a><a class="btn o" href="#harga">Lihat paket</a>
+</section>
 
-    <!-- HERO -->
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <img src="MYA.jpeg" alt="MYA.AI Logo">
-                </div>
-                <div class="hero-text">
-                    <p class="hero-label">✨ Selamat Datang di</p>
-                    <h1 class="hero-title">MYA <span>AI</span></h1>
-                    <p class="hero-subtitle">Buat Website Statis Modern Untuk Bisnis, Event, & Keperluan Anda</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="harga" class="wrap">
+<h2>Paket harga</h2><p class="sub">Harga transparan. Domain dan hosting premium dihitung terpisah.</p>
+<div class="grid">
+<div class="box"><h3>Basic</h3><div class="price">Rp150rb<small> / mulai</small></div><ul><li>1 halaman</li><li>Desain responsif</li><li>2x revisi</li><li>Pengerjaan 2–3 hari</li></ul><a class="btn o" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20tertarik%20paket%20Basic.">Pilih Basic</a></div>
+<div class="box hot"><h3>Standard</h3><div class="price">Rp350rb<small> / mulai</small></div><ul><li>Landing page multi-section</li><li>Animasi &amp; musik latar</li><li>Tombol WhatsApp &amp; peta</li><li>3x revisi</li></ul><a class="btn" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20tertarik%20paket%20Standard.">Pilih Standard</a></div>
+<div class="box"><h3>Premium</h3><div class="price">Rp750rb<small> / mulai</small></div><ul><li>Desain custom penuh</li><li>Multi-halaman</li><li>Fitur tambahan (galeri, form)</li><li>5x revisi + bantuan online</li></ul><a class="btn o" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20tertarik%20paket%20Premium.">Pilih Premium</a></div>
+</div>
+<p class="extra">Butuh yang lebih kecil? Kartu ucapan digital mulai <b>Rp50rb</b>. Revisi tambahan dihitung terpisah.</p>
+</section>
 
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">Services <span>Kami</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
-                    <h3 class="service-name">Undangan Digital</h3>
-                    <p class="service-desc">Undangan pernikahan, ulang tahun, atau acara spesial yang menarik dan modern</p>
-                    <p class="service-price">Mulai dari Rp 50.000</p>
-                </div>
+<section id="event" class="wrap">
+<h2>Sistem pendaftaran event</h2><p class="sub">Untuk lomba, seminar, atau webinar. Sudah terbukti dipakai di lomba poster tingkat nasional.</p>
+<div class="box" style="border:2px solid var(--green);margin-bottom:1.3rem"><h3>Paket Event</h3><div class="price">Rp1jt<small> / mulai, sesuai fitur</small></div><ul><li>Formulir pendaftaran online</li><li>Upload berkas (PDF atau gambar) langsung ke Google Drive</li><li>Data peserta rapi di Google Sheets dan bisa diunduh ke Excel</li><li>Hitung mundur, kategori, dan formulir otomatis tutup saat deadline</li><li>Tampilan nyaman di HP, hosting gratis</li></ul><a class="btn" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20tertarik%20paket%20Sistem%20Pendaftaran%20Event.">Tanya paket Event</a></div>
+<div class="grid steps">
+<div class="box"><h3>Peserta mendaftar</h3><p>Mengisi formulir dan mengunggah berkas lewat HP atau laptop.</p></div>
+<div class="box"><h3>Data tersimpan otomatis</h3><p>Isian masuk ke Google Sheets, file masuk ke folder Google Drive.</p></div>
+<div class="box"><h3>Panitia memantau</h3><p>Cukup buka spreadsheet untuk melihat dan menyeleksi peserta.</p></div>
+</div>
+<p class="extra">Tanpa server dan database, jadi biayanya hemat. Cocok untuk event sampai ratusan peserta karena Google punya batas kuota harian. <a href="https://fast-nationalpostercompetition-umsr.netlify.app/" style="color:var(--green);font-weight:800">Lihat contoh nyatanya →</a></p>
+</section>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
-                    <h3 class="service-name">Landing Page</h3>
-                    <p class="service-desc">Website promosi produk atau jasa dengan design cantik dan responsive</p>
-                    <p class="service-price">Mulai dari Rp 75.000</p>
-                </div>
+<section id="alur" class="wrap">
+<h2>Cara kerjanya</h2><p class="sub">Simpel, tanpa ribet.</p>
+<div class="grid steps">
+<div class="box"><h3>Konsultasi</h3><p>Ceritakan kebutuhan lewat WhatsApp.</p></div>
+<div class="box"><h3>Desain &amp; Bangun</h3><p>Saya buatkan, kamu pantau progresnya.</p></div>
+<div class="box"><h3>Revisi</h3><p>Penyesuaian sesuai jatah revisi paketmu.</p></div>
+<div class="box"><h3>Tayang</h3><p>Website online dan siap dibagikan.</p></div>
+</div>
+</section>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-heart"></i></div>
-                    <h3 class="service-name">Kartu Ucapan Digital</h3>
-                    <p class="service-desc">Kartu ucapan interaktif untuk ucapan selamat, terima kasih, atau doa</p>
-                    <p class="service-price">Mulai dari Rp 15.000</p>
-                </div>
+<section id="hasil" class="wrap work">
+<h2>Hasil kerja nyata</h2><p class="sub">Bukan contoh kosong. Semua bisa dibuka.</p>
+<div class="grid">
+<div class="box"><h3>Pendaftaran Lomba Nasional</h3><p>Formulir, upload poster, dan data ke Google Sheets &amp; Drive.</p><p><a href="https://fast-nationalpostercompetition-umsr.netlify.app/">Buka →</a></p></div>
+<div class="box"><h3>Undangan Digital</h3><p>Minimalis dengan musik latar.</p><p><a href="https://mya-y.github.io/undangan/">Buka →</a></p></div>
+<div class="box"><h3>Web Kelas Bisnis Digital</h3><p>Fitur lengkap dengan Firebase.</p><p><a href="https://bisdig25umsr.netlify.app/">Buka →</a></p></div>
+<div class="box"><h3>Web Jasa Pertama</h3><p>Website penjualan jasa.</p><p><a href="https://mya-y.github.io/jasa-AI/">Buka →</a></p></div>
+</div>
+</section>
 
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-store"></i></div>
-                    <h3 class="service-name">Website Toko/Bisnis</h3>
-                    <p class="service-desc">Website presentasi bisnis Anda dengan portfolio produk dan kontak</p>
-                    <p class="service-price">Mulai dari Rp 50.000</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="service-name">Portfolio Website</h3>
-                    <p class="service-desc">Website portfolio profesional untuk showcase karya atau skill Anda</p>
-                    <p class="service-price">Mulai dari Rp 100.000</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
-                    <h3 class="service-name">Custom Design</h3>
-                    <p class="service-desc">Desain website custom sesuai kebutuhan dan keinginan Anda</p>
-                    <p class="service-price">Hubungi untuk Quote</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Portfolio <span>Kami</span></h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Undangan Digital</p>
-                        <h3 class="portfolio-name">Undangan Pernikahan 1</h3>
-                        <p class="portfolio-desc">Undangan digital dengan tema modern minimalis</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Landing Page</p>
-                        <h3 class="portfolio-name">Landing Page Produk</h3>
-                        <p class="portfolio-desc">Website promosi produk digital dengan CTA yang menarik</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Website Bisnis</p>
-                        <h3 class="portfolio-name">Website Cafe</h3>
-                        <p class="portfolio-desc">Website toko dengan menu lengkap dan kontak terintegrasi</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Kartu Ucapan</p>
-                        <h3 class="portfolio-name">Kartu Ucapan Ulang Tahun</h3>
-                        <p class="portfolio-desc">Kartu ucapan interaktif dengan animasi menarik</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Undangan Digital</p>
-                        <h3 class="portfolio-name">Undangan Acara 2</h3>
-                        <p class="portfolio-desc">Undangan acara dengan design elegan dan responsif</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <div class="portfolio-info">
-                        <p class="portfolio-category">Portfolio</p>
-                        <h3 class="portfolio-name">Portfolio Freelancer</h3>
-                        <p class="portfolio-desc">Website portfolio profesional untuk showcase karya</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title">Hubungi <span>Kami</span></h2>
-                <p class="contact-text">
-                    Tertarik dengan service kami? Hubungi kami sekarang juga dan dapatkan konsultasi gratis untuk project Anda!
-                </p>
-                <div class="contact-icons">
-                    <a href="https://wa.me/6287852867866" class="contact-icon-link" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://instagram.com/ydiii_ee" class="contact-icon-link" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://tiktok.com/@ydiii_eee" class="contact-icon-link" title="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="js/script.js"></script>
+<section id="kontak" class="wrap">
+<div class="cta"><h2>Siap mulai?</h2><p>Konsultasi gratis, tanpa kewajiban order.</p>
+<a class="btn" href="https://wa.me/6287852867866?text=Halo%20MYA.AI%2C%20saya%20mau%20konsultasi%20pembuatan%20website.">Chat WhatsApp</a><a class="btn o" style="color:var(--bg);border-color:var(--bg)" href="https://instagram.com/ydiii_ee">Instagram</a></div>
+</section>
+</main>
+<footer>© 2026 MYA.AI · Dibuat oleh Muh. Yadi Aldiansyah</footer>
 </body>
 </html>
